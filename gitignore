@@ -1,0 +1,61 @@
+# =========================
+# Go (server/)
+# =========================
+# Binary hasil build
+server/bin/
+server/server
+server/*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Hasil test & coverage
+*.test
+*.out
+coverage.html
+
+# Workspace lokal (opsional, tiap PC bisa beda)
+go.work
+go.work.sum
+
+# =========================
+# Godot 4 (client/)
+# =========================
+# Cache & import internal Godot — dibuat ulang otomatis saat project dibuka
+client/.godot/
+client/.import/
+
+# Hasil export build game
+client/build/
+client/export/
+
+# Export presets bisa berisi path keystore/password Android
+client/export_presets.cfg
+
+# File sementara Godot
+*.translation
+*.tmp
+
+# =========================
+# Secrets & environment
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# IDE & editor
+# =========================
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# =========================
+# OS
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini

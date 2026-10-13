@@ -22,8 +22,9 @@ type MoveDamage struct {
 }
 
 type DamageConfig struct {
-	Win MoveDamage
-	Tie MoveDamage
+	Win  MoveDamage
+	Tie  MoveDamage
+	Chip MoveDamage
 }
 
 type RoundResult struct {
@@ -93,8 +94,10 @@ func ResolveRound(p1, p2 Move, cfg DamageConfig) (RoundResult, error) {
 		result.DamageToP1 = d
 		result.DamageToP2 = d
 	case RoundP1:
+		result.DamageToP1 = cfg.Chip.For(p2)
 		result.DamageToP2 = cfg.Win.For(p1)
 	case RoundP2:
+		result.DamageToP2 = cfg.Chip.For(p1)
 		result.DamageToP1 = cfg.Win.For(p2)
 	}
 	return result, nil
